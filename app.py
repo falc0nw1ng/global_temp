@@ -23,7 +23,8 @@ sea_levels = pd.read_csv('oceanlevels/sea_levels.csv')
 sea_levels['Adjusted Sea Levels (mm)'] = 25.4*sea_levels['CSIRO - Adjusted sea level (inches)']
 
 app = dash.Dash(__name__)
-
+app.config.suppress_callback_exceptions = True
+server = app.server #uncomment this for deployment
 ##### static graphs###############################################################
 ### continent_animation #################################################
 ###############################################################################
