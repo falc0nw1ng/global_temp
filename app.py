@@ -1,3 +1,4 @@
+import os
 import plotly.graph_objects as go
 import dash
 import dash_core_components as dcc
@@ -9,19 +10,17 @@ import plotly.express as px
 import numpy as np
 import pandas as pd
 
-hurricane_count = pd.read_csv('hurricane_data/hur_data.csv')
+hurricane_count = pd.read_csv('data/hur_data.csv')
 
-hurricane_energy = pd.read_csv('hurricane_data/cyclone_energy.csv')
+hurricane_energy = pd.read_csv('data/cyclone_energy.csv')
 
-year_2011 = pd.read_csv('temp_data/2011_data.csv', sep = "\t", engine = 'python')
+continent_temp = pd.read_csv('data/revised_cont.csv')
 
-continent_temp = pd.read_csv('temp_data/revised_cont.csv')
+global_temp_data = pd.read_csv('data/qtemp.csv')
 
-global_temp_data = pd.read_csv('temp/qtemp.csv')
+arctic_ice = pd.read_csv('data/arctic_sea_ice.csv', sep = '\t')
 
-arctic_ice = pd.read_csv('oceanlevels/arctic_sea_ice.csv', sep = '\t')
-
-sea_levels = pd.read_csv('oceanlevels/sea_levels.csv')
+sea_levels = pd.read_csv('data/sea_levels.csv')
 sea_levels['Adjusted Sea Levels (mm)'] = 25.4*sea_levels['CSIRO - Adjusted sea level (inches)']
 
 
@@ -92,10 +91,13 @@ sea_levels_graph.update_layout(
     ),
 )
 
+#########################################
+######## Plotly layout starts###################
+##########################################3
+
 app = dash.Dash(__name__)
 app.config.suppress_callback_exceptions = True
 server = app.server
-
 
 app.layout = html.Div([
     html.Div([

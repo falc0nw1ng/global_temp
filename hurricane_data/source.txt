@@ -1,7 +1,0 @@
-https://www.epa.gov/climate-indicators/climate-change-indicators-tropical-cyclone-activity
-
-
-adjusted data, meaning that the earlier years have been altered to account for the lack of detection equipment
-
-cyclone data
-Units: Accumulated Cyclone Energy index, 

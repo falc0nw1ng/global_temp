@@ -1,8 +1,0 @@
-https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data
-
-
-https://climate.nasa.gov/vital-signs/global-temperature/
-for global_temp_abnorm
-
-continent_temp
-https://www.worlddata.info/global-warming.php
