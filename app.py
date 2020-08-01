@@ -1,11 +1,13 @@
-import dash
-import dash_html_components as html
-import dash_core_components as dcc
-import pandas as pd
-from dash.dependencies import Input, Output
 import plotly.graph_objects as go
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Input, Output
+from flask import Flask
 import plotly.express as px
 
+import numpy as np
+import pandas as pd
 
 hurricane_count = pd.read_csv('hurricane_data/hur_data.csv')
 
@@ -22,9 +24,7 @@ arctic_ice = pd.read_csv('oceanlevels/arctic_sea_ice.csv', sep = '\t')
 sea_levels = pd.read_csv('oceanlevels/sea_levels.csv')
 sea_levels['Adjusted Sea Levels (mm)'] = 25.4*sea_levels['CSIRO - Adjusted sea level (inches)']
 
-app = dash.Dash(__name__)
-app.config.suppress_callback_exceptions = True
-server = app.server #uncomment this for deployment
+
 ##### static graphs###############################################################
 ### continent_animation #################################################
 ###############################################################################
@@ -92,6 +92,11 @@ sea_levels_graph.update_layout(
     ),
 )
 
+app = dash.Dash(__name__)
+app.config.suppress_callback_exceptions = True
+server = app.server
+
+
 app.layout = html.Div([
     html.Div([
         html.P("Global Temperature, Hurricanes, Ocean levels and Arctic Sea Ice Levels", style = {
@@ -156,10 +161,6 @@ app.layout = html.Div([
         }),
 
 ])
-
-
-
-
 
 
 
