@@ -115,9 +115,10 @@ app.layout = html.Div([
     html.Div([
         dcc.Graph(figure = global_temp_map,
             style = {
-                'width':'58%',
+                'width':'60%',
                 'float':'left',
                 'padding':'20px',
+                'text-align':'center'
             })
     ]),
     html.Div([
@@ -125,7 +126,7 @@ app.layout = html.Div([
             figure = arctic_ice_graph
         )
     ], style = {
-        'width':'34%',
+        'width':'35%',
         'float':'left',
         'padding':'20px'
     }),
@@ -157,7 +158,7 @@ app.layout = html.Div([
         }),
         html.Div(id = 'hurricane_container')
         ], style = {
-            'width':'25%',
+            'width':'27%',
             'float':'left',
             'padding':'20px',
         }),
